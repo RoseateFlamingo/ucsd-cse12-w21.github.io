@@ -20,6 +20,12 @@ public class ArrayStringList implements StringList {
 	  this.elements[this.size] = s;
 	  this.size += 1;
   }
+	
+  public void prepend(String s) {
+	  expandCapacity();
+	  for (int i = 0; i < this.size; i += 1) {
+		  this.elements[this.size - i] = this.elements[this.size - i - 1];
+	  this.elements[0] = s;
   
   public String get(int index) {
 	  return this.elements[index];
